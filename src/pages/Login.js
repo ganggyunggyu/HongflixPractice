@@ -1,63 +1,65 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Login.module.css";
+import styles from "./Auth.module.css";
 import { Link } from "react-router-dom";
 
 export default function Login({ inputValue, handleFocus, inputClear }) {
-  const [loginEmail, setLoginEmail] = useState("");
-  const [isLoginEmailFocused, setIsLoginEmailFocused] = useState(false);
-  const [loginpassword, setLoginPassword] = useState("");
-  const [isLoginPassWordFocused, setIsLoginPassWordFocused] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
+  const [password, setPassword] = useState("");
+  const [isPassWordFocused, setIsPassWordFocused] = useState(false);
   const [isButtonActive, setIsButtonActive] = useState(false);
 
-  const loginFormSubmit = (e) => {
+  const FormSubmit = (e) => {
     e.preventDefault();
-    console.log(`LoginEmail : ${loginEmail}\nLoginpassword : ${loginpassword}`);
+    console.log(`Email : ${email}\npassword : ${password}`);
   };
 
   useEffect(() => {
-    loginEmail && loginpassword
-      ? setIsButtonActive(true)
-      : setIsButtonActive(false);
+    email && password ? setIsButtonActive(true) : setIsButtonActive(false);
   });
   return (
     <>
-      <div className={`${styles.loginBackGround}`}>
-        <div className={`${styles.loginContainer}`}>
-          <div className={`${styles.loginFormHeader}`}>
+      <div
+        className={`${styles.BackGround} flex flex-col justify-center items-center w-screen h-screen`}
+      >
+        <div
+          className={`${styles.Container} flex flex-col justify-center items-center rounded-lg`}
+        >
+          <div className={`${styles.FormHeader} mt-10 text-center font-black`}>
             <h1>HONG CHA</h1>
             <p>동시방영 신작부터 역대 인기작까지</p>
             <p>한 곳에서 편안-하게!</p>
           </div>
-          <form className={`${styles.loginForm}`} action="" method="POST">
+          <form className={`${styles.Form}`} action="" method="POST">
             <div
-              className={`${styles.loginFormItem} ${
-                isLoginEmailFocused ? styles.loginFormItemFocus : ""
-              }`}
+              className={`${styles.FormItem} ${
+                isEmailFocused ? styles.FormItemFocus : ""
+              } flex flex-col w-80`}
             >
-              <label className={`${styles.loginFormLabel}`} htmlFor="">
+              <label className={`${styles.FormLabel}`} htmlFor="">
                 이메일
               </label>
               <div className={`relative`}>
                 <input
-                  className={`${styles.loginFormInput}`}
+                  className={`${styles.FormInput}`}
                   placeholder="이메일 입력해주세요"
-                  type="LoginEmail"
-                  value={loginEmail || ""}
+                  type="Email"
+                  value={email || ""}
                   onChange={(e) => {
-                    inputValue(e, setLoginEmail);
+                    inputValue(e, setEmail);
                   }}
                   onFocus={() => {
-                    handleFocus(isLoginEmailFocused, setIsLoginEmailFocused);
+                    handleFocus(isEmailFocused, setIsEmailFocused);
                   }}
                   onBlur={() => {
-                    handleFocus(isLoginEmailFocused, setIsLoginEmailFocused);
+                    handleFocus(isEmailFocused, setIsEmailFocused);
                   }}
                 />
-                {isLoginEmailFocused ? (
+                {isEmailFocused ? (
                   <button
-                    className={`${styles.loginInputButton} flex items-center rounded-full font-black absolute top-0 right-0`}
+                    className={`${styles.InputButton} flex items-center rounded-full font-black absolute top-0 right-0`}
                     onMouseDown={(e) => {
-                      inputClear(e, setLoginEmail);
+                      inputClear(e, setEmail);
                     }}
                     onClick={(e) => {
                       e.preventDefault();
@@ -69,40 +71,34 @@ export default function Login({ inputValue, handleFocus, inputClear }) {
               </div>
             </div>
             <div
-              className={`${styles.loginFormItem} ${
-                isLoginPassWordFocused ? styles.loginFormItemFocus : ""
+              className={`${styles.FormItem} ${
+                isPassWordFocused ? styles.FormItemFocus : ""
               } relative`}
             >
-              <label className={`${styles.loginFormLabel}`} htmlFor="">
+              <label className={`${styles.FormLabel}`} htmlFor="">
                 비밀번호
               </label>
               <div className={`relative`}>
                 <input
-                  className={`${styles.loginFormInput}`}
+                  className={`${styles.FormInput}`}
                   placeholder="비밀번호를 입력해주세요"
-                  type="Loginpassword"
-                  value={loginpassword || ""}
+                  type="password"
+                  value={password || ""}
                   onChange={(e) => {
-                    inputValue(e, setLoginPassword);
+                    inputValue(e, setPassword);
                   }}
                   onFocus={() => {
-                    handleFocus(
-                      isLoginPassWordFocused,
-                      setIsLoginPassWordFocused
-                    );
+                    handleFocus(isPassWordFocused, setIsPassWordFocused);
                   }}
                   onBlur={() => {
-                    handleFocus(
-                      isLoginPassWordFocused,
-                      setIsLoginPassWordFocused
-                    );
+                    handleFocus(isPassWordFocused, setIsPassWordFocused);
                   }}
                 />
-                {isLoginPassWordFocused ? (
+                {isPassWordFocused ? (
                   <button
-                    className={`${styles.loginInputButton} flex items-center rounded-full font-black absolute top-0 right-0`}
+                    className={`${styles.InputButton} flex items-center rounded-full font-black absolute top-0 right-0`}
                     onMouseDown={(e) => {
-                      inputClear(e, setLoginPassword);
+                      inputClear(e, setPassword);
                     }}
                     onClick={(e) => {
                       e.preventDefault();
@@ -113,16 +109,16 @@ export default function Login({ inputValue, handleFocus, inputClear }) {
                 ) : null}
               </div>
             </div>
-            <p className={`${styles.loginFormText} mt-2`}>
-              계정이 없으시다면..<Link to={"/login"}> 가입하기</Link>
+            <p className={`${styles.FormText} mt-2`}>
+              계정이 없으시다면..<Link to={"/"}> 가입하기</Link>
             </p>
             <button
-              className={`${styles.loginFormBtn} ${
-                isButtonActive ? styles.loginFormBtnCompletion : ""
-              }`}
+              className={`${styles.FormBtn} ${
+                isButtonActive ? styles.FormBtnCompletion : ""
+              } flex items-center justify-cente w-full`}
               disabled={isButtonActive}
               onClick={(e) => {
-                loginFormSubmit(e);
+                FormSubmit(e);
               }}
             >
               로그인

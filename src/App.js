@@ -1,6 +1,6 @@
 import "./App.css";
 import Login from "./pages/Login";
-import Join from "./pages/Join";
+import SignUp from "./pages/SignUp";
 import AdminHome from "./pages/AdminHome";
 import { Route, Routes } from "react-router-dom";
 
@@ -32,14 +32,14 @@ function App() {
           }
         ></Route>
         <Route
-          path="/join"
+          path="/signup"
           element={
             <>
-              <Join
+              <SignUp
                 inputValue={inputValue}
                 handleFocus={handleFocus}
                 inputClear={inputClear}
-              ></Join>
+              ></SignUp>
             </>
           }
         ></Route>
