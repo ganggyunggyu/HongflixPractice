@@ -1,0 +1,23 @@
+{
+  "admin": [
+    {
+      "email": "admin@naver.com",
+      "password": "asdf1234!",
+      "nickName": "관리자",
+      "phone_number": "01012341234",
+      "roll": "admin"
+    }
+  ],
+  "members": [
+    {
+      "email": "abc@naver.com",
+      "password": "asdf1234!",
+      "nickName": "사과",
+      "phone_number": "01012341234",
+      "roll": "user",
+      "available": 0,
+      "period": "0"
+    }
+  ],
+  "movie": ["accecsKey"]
+}

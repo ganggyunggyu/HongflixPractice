@@ -1,0 +1,46 @@
+{
+  "item": [
+    {
+      "id": 0,
+      "boardId": 0,
+      "title": "제목1",
+      "content": "content1",
+      "memberId": 0,
+      "displayName": "또띠"
+    },
+    {
+      "boardId": 0,
+      "title": " 안녕",
+      "content": "안녕",
+      "memberId": 0,
+      "displayName": "또띠",
+      "id": 1
+    }
+  ],
+  "user": [
+    {
+      "id": 0,
+      "displayName": "닉네임TEst",
+      "email": "test@test.test",
+      "password": "1234Qwerasdf"
+    },
+    {
+      "id": 1,
+      "displayName": "닉네임TEst",
+      "email": "test1@test.test",
+      "password": "1234"
+    },
+    {
+      "email": "etest2@test.test",
+      "passWord": "passWordTest",
+      "displayName": "닉네임",
+      "id": 2
+    },
+    {
+      "email": "test3@test.test",
+      "passWord": "passWordTest",
+      "displayName": "닉네임",
+      "id": 3
+    }
+  ]
+}

@@ -30,7 +30,11 @@ export default function Login({ inputValue, handleFocus, inputClear }) {
             <p>동시방영 신작부터 역대 인기작까지</p>
             <p>한 곳에서 편안-하게!</p>
           </div>
-          <form className={`${styles.Form}`} action="" method="POST">
+          <form
+            className={`${styles.Form} mb-10 mt-10`}
+            action=""
+            method="POST"
+          >
             <div
               className={`${styles.FormItem} ${
                 isEmailFocused ? styles.FormItemFocus : ""
@@ -115,7 +119,7 @@ export default function Login({ inputValue, handleFocus, inputClear }) {
             <button
               className={`${styles.FormBtn} ${
                 isButtonActive ? styles.FormBtnCompletion : ""
-              } flex items-center justify-cente w-full`}
+              } flex items-center w-full`}
               disabled={isButtonActive}
               onClick={(e) => {
                 FormSubmit(e);

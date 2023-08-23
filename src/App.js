@@ -1,8 +1,11 @@
 import "./App.css";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import AdminHome from "./pages/AdminHome";
+import AdminHome from "./admin/AdminHome";
 import { Route, Routes } from "react-router-dom";
+import AdminContent from "./admin/AdminContent";
+import AdminSetting from "./admin/AdminSetting";
+import AdminMembers from "./admin/AdminMembers";
 
 function App() {
   const inputValue = (e, setValue) => {
@@ -48,6 +51,30 @@ function App() {
           element={
             <>
               <AdminHome></AdminHome>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/admin/contents"
+          element={
+            <>
+              <AdminContent></AdminContent>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/admin/setting"
+          element={
+            <>
+              <AdminSetting></AdminSetting>
+            </>
+          }
+        ></Route>
+        <Route
+          path="/admin/members"
+          element={
+            <>
+              <AdminMembers></AdminMembers>
             </>
           }
         ></Route>
